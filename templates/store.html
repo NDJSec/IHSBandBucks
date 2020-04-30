@@ -9,34 +9,45 @@
     {% extends "template.html" %}
     {% block content %}
     <div class="w3-container" style="padding:128px 16px">
-        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <p>
-                Choose a Stand Tune
-            </p>
-            <span class="w3-center w3-opacity">50 Band Bucks</span>
-            <button class="button is-block is-info is-large is-fullwidth">Buy</button>
-        </div>
-
         <div class="w3-row-padding" style="margin-top:64px">
             <div class="w3-row-padding" style="margin-top:64px">
                 <div class="w3-third w3-section">
-                    <ul class="w3-ul w3-white w3-hover-shadow">
-                        <li class="w3-white w3-xlarge w3-padding-32">Choose a Stand Tune</li>
-                        <span class="w3-center w3-opacity">50 Band Bucks</span>
-                        <button class="button is-block is-info is-large is-fullwidth">Buy</button>
-                    </ul>
+                    <form action="/store" method="POST"></form>
+                        <ul class="w3-ul w3-white w3-hover-shadow">
+                            <li class="w3-blue w3-xlarge w3-padding-32">Choose a Stand Tune</li>
+                            <span class="w3-center w3-opacity">50 Band Bucks</span>
+                            <input type="hidden" name="btn_identifier" value="ST_identifier" />
+                            <button class="button is-block is-info is-large is-fullwidth">Add to Cart</button>
+                        </ul>
+                    </form>
                 </div>
 
                 <div class="w3-third w3-section">
-                    <ul class="w3-ul w3-white w3-hover-shadow">
-                        <li class="w3-white w3-xlarge w3-padding-32">Extra Five Minutes of Lunch (Band Camp)</li>
-                        <span class="w3-center w3-opacity">50 Band Bucks</span>
-                        <button class="button is-block is-info is-large is-fullwidth">Buy</button>
-                    </ul>
+                    <form action="/store" method="POST"></form>
+                        <ul class="w3-ul w3-white w3-hover-shadow">
+                            <li class="w3-blue w3-xlarge w3-padding-32">Extra Five Minutes of Lunch (Band Camp)</li>
+                            <span class="w3-center w3-opacity">50 Band Bucks</span>
+                            <input type="hidden" name="btn_identifier" value="X5L_identifier" />
+                            <button class="button is-block is-info is-large is-fullwidth">Add to Cart</button>
+                        </ul>
+                    </form>
                 </div>
+
+                <div class="w3-third w3-section">
+                    <form action="/store" method="POST"></form>
+                        <ul class="w3-ul w3-white w3-hover-shadow">
+                            <li class="w3-blue w3-xlarge w3-padding-32">Valve Oil</li>
+                            <span class="w3-center w3-opacity">20 Band Bucks</span>
+                            <input type="hidden" name="btn_identifier" value="VO_identifier" />
+                            <button class="button is-block is-info is-large is-fullwidth">Add to Cart</button>
+                        </ul>
+                    </form>
+                </div>
+
+
+
             </div>
         </div>
-
     </div>
     {% endblock %}
 </body>

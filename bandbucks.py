@@ -59,3 +59,10 @@ def success():
 @bb.route('/store')
 def store():
     return render_template('store.html')
+
+@bb.route('/store', methods=['POST'])
+def store_post():
+    if request.form['btn_identifier'] == 'ST_identifier':
+        return redirect(url_for('home.HomePage'))
+    elif request.form['btn_identifier'] == 'X5L_identifier':
+        return redirect(url_for('home.Profile'))
