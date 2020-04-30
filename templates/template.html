@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <style media="screen">
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+        }
+        .topnav {
+           background-color: #333;
+           overflow: hidden;
+        }
+
+        .topnav a {
+           float: left;
+           color: #f2f2f2;
+           text-align: center;
+           padding: 14px 16px;
+           text-decoration: none;
+           font-size: 17px;
+        }
+
+
+        .topnav a:hover {
+           background-color: #ddd;
+           color: black;
+        }
+
+
+        .topnav a.active {
+           background-color: #4CAF50;
+           color: white;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+    </style>
+ </head>
+ <body>
+
+
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+          <a class="w3-bar-item w3-button w3-wide" href="{{ url_for('home.HomePage') }}">Home</a>
+
+            <div class="w3-right w3-hide-small">
+                <a href="#Contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact</a>
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+
+                {% if current_user.name == "test" %}
+                <a href="{{ url_for('bb.manage') }}" class="w3-bar-item w3-button">Manage</a>
+                {% endif %}
+
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('home.Profile') }}" class="w3-bar-item w3-button"><i class="fa fa-user"></i>Profile</a>
+                {% endif %}
+
+                {% if not current_user.is_authenticated %}
+                <a href="{{ url_for('auth.login') }}" class="w3-bar-item w3-button">Login</a>
+                {% endif %}
+
+                {% if not current_user.is_authenticated %}
+                <a href="{{ url_for('auth.signup') }}" class="w3-bar-item w3-button">Sign Up</a>
+                {% endif %}
+
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('auth.logout') }}" class="w3-bar-item w3-button">Logout</a>
+                {% endif %}
+            </div>
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+
+      <a href="#Contact" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
+
+      <a href="#About" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+
+      {% if current_user.name == "test" %}
+      <a href="{{ url_for('bb.manage') }}" onclick="w3_close()" class="w3-bar-item w3-button">Manage</a>
+      {% endif %}
+
+      {% if current_user.is_authenticated %}
+      <a href="{{ url_for('home.Profile') }}" onclick="w3_close()" class="w3-bar-item w3-button">Profile</a>
+      {% endif %}
+
+      {% if not current_user.is_authenticated %}
+      <a href="{{ url_for('auth.login') }}" onclick="w3_close()" class="w3-bar-item w3-button">Login</a>
+      {% endif %}
+
+      {% if not current_user.is_authenticated %}
+      <a href="{{ url_for('auth.signup') }}" onclick="w3_close()" class="w3-bar-item w3-button">Sign Up</a>
+      {% endif %}
+
+      {% if current_user.is_authenticated %}
+      <a href="{{ url_for('auth.logout') }}" onclick="w3_close()" class="w3-bar-item w3-button">Logout</a>
+      {% endif %}
+    </nav>
+
+    <script>
+        var mySidebar = document.getElementById("mySidebar");
+
+        function w3_open() {
+          if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+          } else {
+            mySidebar.style.display = 'block';
+          }
+        }
+
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
+    </script>
+
+
+    {% block content %}
+    {% endblock %}
+
+ </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+
+    {% block content %}
+    <div class="column is-4 is-offset-4" style="padding:128px 16px">
+        <h3 class="title w3-center">Contact</h3>
+        <div class="box">
+            <form action="/contact" method="POST">
+                {{ form.hidden_tag() }}
+
+                {{ form.name.label }}
+                {{ form.name }}
+
+                {{ form.email.label }}
+                {{ form.email }}
+
+                {{ form.subject.label }}
+                {{ form.subject }}
+
+                {{ form.message.label }}
+                {{ form.message }}
+
+                {{ form.submit }}
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+
+  </body>
+</html>

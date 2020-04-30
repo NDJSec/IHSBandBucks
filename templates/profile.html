@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <div class="w3-container" style="padding:128px 16px">
+        <h1 class="title w3-center">{{ name }}</h1>
+        <div class="w3-third w3-section">
+            <ul class="w3-ul w3-white w3-hover-shadow">
+                <li class="w3-black w3-xlarge w3-padding-32">Balence</li>
+                <li class="w3-padding-16"><b>Amount</b> {{ amount }}</li>
+            </ul>
+        </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

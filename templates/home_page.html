@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <div class="w3-container" style="padding:128px 16px">
+        <h1 class="title w3-center" style="font-size:100px">Band Bucks Hub</h1>
+        <h3 class="w3-center" style="font-size:30px">This is the offical site of IHS Band Bucks!</h3>
+
+        <div class="w3-row-padding" style="margin-top:64px">
+            <div class="w3-third w3-section">
+                <ul class="w3-ul w3-white w3-hover-shadow">
+                    <li class="w3-black w3-xlarge w3-padding-32">Totals</li>
+                    <li class="w3-padding-16"><b>Band Total:</b></li>
+                    <li class="w3-padding-16"><b>Top Section:</b></li>
+                </ul>
+            </div>
+
+            <div class="w3-third w3-section">
+                <ul class="w3-ul w3-white w3-hover-shadow">
+                    <li class="w3-black w3-xlarge w3-padding-32">FAQs</li>
+                    <li class="w3-padding-16">What are Band Bucks?<p>Band bucks are a band crypto-currency used by the IHS band.</p></li>
+                    <li class="w3-padding-16">How do I earn them?</li>
+                    <li class="w3-padding-16">Can I lose Band Bucks?</li>
+                </ul>
+            </div>
+
+            <div class="w3-third w3-section">
+                <ul class="w3-ul w3-white w3-hover-shadow">
+                    <li class="w3-black w3-xlarge w3-padding-32">Rankings</li>
+                    <li class="w3-padding-16"><b>Personal: #1</b></li>
+                    <li class="w3-padding-16"><b>Section: #1</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
