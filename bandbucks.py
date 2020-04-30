@@ -55,3 +55,7 @@ def remove_post():
 @bb.route('/manage_success')
 def success():
     return render_template('Success.html')
+
+@bb.route('/store')
+def store():
+    return render_template('store.html')
