@@ -43,7 +43,7 @@ def remove_post():
     user = User.query.filter_by(name=name).first()
 
     if not user:
-        flash('User does\'t exist.')
+        flash('User doesn\'t exist.')
         return redirect(url_for('bb.remove'))
 
 
