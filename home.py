@@ -21,3 +21,7 @@ def Profile():
 def contact():
     form = ContactForm()
     return render_template('contact.html', form=form)
+
+@home.route('/about')
+def about():
+    return render_template('about.html')

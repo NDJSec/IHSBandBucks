@@ -89,7 +89,7 @@
 
       <a href="#Contact" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
 
-      <a href="#About" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+      <a href="{{ url_for('home.about ')}}" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
 
       {% if current_user.name == "test" %}
       <a href="{{ url_for('bb.manage') }}" onclick="w3_close()" class="w3-bar-item w3-button">Manage</a>
