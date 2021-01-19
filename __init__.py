@@ -15,10 +15,10 @@ def create_app():
     app.secret_key = 'changethiskey'
 
     SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
-        username="IHSBandBucks",
-        password="V5tg3vKtJDGr@9L",
-        hostname="IHSBandBucks.mysql.pythonanywhere-services.com",
-        databasename="IHSBandBucks$BandBucks",
+        '''username="ADD USERNAME",
+        password="ADD PASSWORD",
+        hostname="ADD HOSTNAME",
+        databasename="ADD DATABASE NAME",'''
         )
 
     app.config['SECRET_KEY'] = 'thissecretkey'
